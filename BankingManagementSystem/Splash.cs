@@ -15,23 +15,36 @@ namespace BankingManagementSystem
         public Splash()
         {
             InitializeComponent();
+            timer1.Start();  // Start the timer when the form loads
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            timer1.Start();
+            
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if(progressBar1.Value < 100 )
+            try
             {
-                progressBar1.Value += 10;
+                if (progressBar1.Value < 100)
+                {
+                    progressBar1.Value += 10;
+                }
+                else
+                {
+                    timer1.Stop();
+                    MessageBox.Show("Progress Completed");
+                    //close splash screen
+                    //Close();
+                    Hide();
+                    Login login = new Login();
+                    login.Show();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                timer1.Stop();
-                MessageBox.Show("Progress Completed");
+                MessageBox.Show($"An error occurred: {ex.Message}");
             }
         }
     }

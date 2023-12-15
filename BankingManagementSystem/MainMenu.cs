@@ -17,6 +17,22 @@ namespace BankingManagementSystem
             InitializeComponent();
         }
 
-        
+        private void label2_Click(object sender, EventArgs e)
+        {
+            AddAccounts accounts = new AddAccounts();
+            accounts.Show();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            Settings settings = new Settings();
+            settings.Show();
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Transactions transactions = new Transactions();
+            transactions.Show();
+        }
     }
 }

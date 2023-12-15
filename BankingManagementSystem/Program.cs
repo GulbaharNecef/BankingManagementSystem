@@ -16,7 +16,7 @@ namespace BankingManagementSystem
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Transactions());
+            Application.Run(new MainMenu());
         }
     }
 }
